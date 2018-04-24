@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List Manager</title>
+</head>
+<body>
+<h1>Welcome to the ToDo List Manager</h1>
+<p>Here you can see all existing tasks</p>
+<ul>
+    {% for task in taskmap.values() %}
+    <li>{{ task }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
