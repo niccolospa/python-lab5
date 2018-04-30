@@ -8,10 +8,17 @@
 <h1>Welcome to the ToDo List Manager</h1>
 <p>Here you can see all existing tasks</p>
 <ul>
-    {% for task in taskmap.values() %}
-    <li>{{ task }}</li>
+    {% for id, task in taskmap.items() %}
+    <li>{{ task }} <a href="{{ url_for('delete', task_id = id) }}">Delete</a> </li>
     {% endfor %}
 </ul>
 
+<form action="{{ url_for('insert') }}" method="post">
+    <p>Insert a new task:
+        <input type="text" name="new"/>
+        <input type="checkbox" name="urgent"/>
+        <input type="submit" value="Enter"/>
+    </p>
+</form>
 </body>
 </html>
